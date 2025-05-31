@@ -1,6 +1,6 @@
 
 import json
-
+import os
 from langchain_core.prompts import (
     PromptTemplate,
     SystemMessagePromptTemplate,
@@ -16,7 +16,7 @@ from datetime import datetime, timedelta
 from rich.console import Console
 from rich.markdown import Markdown
 
-API_KEY = "AIzaSyArBrQaj3ndxm-8Xrw0bIGLyUuYTvSzYtk"
+API_KEY = os.getenv("GOOGLE_API_KEY")
 
 chat_model = ChatGoogleGenerativeAI(
     api_key=API_KEY, model="gemini-1.5-flash", temperature=0.6
